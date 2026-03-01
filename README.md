@@ -4,13 +4,14 @@ This project is a production-ready Spring Boot application that performs User CR
 
 ## 🚀 Features
 
-* User CRUD APIs (Create, Read, Update, Delete)
-* Redis integration for caching user data
-* Cacheable service layer using Spring Cache (`@Cacheable`, `@CachePut`, `@CacheEvict`)
-* MySQL database with Spring Data JPA
-* RESTful API design
-* Clean layered architecture (Controller → Service → Repository)
-* High-performance data retrieval using in-memory caching
+* **User CRUD APIs** (Create, Read, Update, Delete)
+* **Redis Integration**: High-performance data retrieval using in-memory caching to reduce database load.
+* **Declarative Cacheable Service Layer**:
+  * **Add to Cache (`@Cacheable`)**: When a user queries data for the first time, Spring fetches it from MySQL, stores it in the Redis cache, and sets a 10-minute countdown. Subsequent reads within those 10 minutes hit Redis directly.
+  * **Update Cache (`@CachePut`)**: When a user is modified or created via the API, Spring saves the fresh data to MySQL and automatically overwrites the associated Redis cache entry with the new data.
+  * **Delete Cache (`@CacheEvict`)**: When a user is deleted via the API, Spring removes the user from MySQL and automatically deletes the user's data from the Redis cache.
+* **MySQL Database**: Long-term relational persistence using Spring Data JPA.
+* **Clean Layered Architecture**: Clear separation of concerns (Controller → Service → Repository).
 
 ## 🏗️ Tech Stack
 
