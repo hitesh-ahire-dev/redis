@@ -36,7 +36,13 @@ This project is a production-ready Spring Boot application that performs User CR
 * Cache Key Format: `users::userId`
 * Automatic cache update on update operations (`@CachePut`)
 * Cache eviction on delete operations (`@CacheEvict`)
-* Time To Live (TTL): 10 minutes
+
+### Time To Live (TTL): 10 minutes
+In `RedisConfig.java`, we've configured a TTL of 10 minutes for our cache entries.
+- After a user is fetched from MySQL and stored in Redis, a 10-minute timer starts.
+- If no one accesses or updates that user's data for 10 minutes, Redis automatically deletes it from memory.
+- The next request for that user will be a Cache Miss, and Spring will fetch fresh data from MySQL and start a new 10-minute timer.
+- **Why?** It guarantees the cache memory doesn't fill up with stale or unused data and ensures data naturally refreshes.
 
 ## 📦 APIs
 
