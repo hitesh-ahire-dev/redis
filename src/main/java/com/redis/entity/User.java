@@ -1,4 +1,4 @@
-package com.radis.entity;
+package com.redis.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

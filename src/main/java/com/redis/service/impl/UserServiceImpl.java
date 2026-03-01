@@ -1,8 +1,8 @@
-package com.radis.service.impl;
+package com.redis.service.impl;
 
-import com.radis.entity.User;
-import com.radis.repository.UserRepository;
-import com.radis.service.UserService;
+import com.redis.entity.User;
+import com.redis.repository.UserRepository;
+import com.redis.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;

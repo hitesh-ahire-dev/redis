@@ -1,7 +1,7 @@
-package com.radis.controller;
+package com.redis.controller;
 
-import com.radis.entity.User;
-import com.radis.service.UserService;
+import com.redis.entity.User;
+import com.redis.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

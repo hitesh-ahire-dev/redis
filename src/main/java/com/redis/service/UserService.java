@@ -1,6 +1,6 @@
-package com.radis.service;
+package com.redis.service;
 
-import com.radis.entity.User;
+import com.redis.entity.User;
 import java.util.List;
 
 public interface UserService {

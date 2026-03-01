@@ -1,7 +1,7 @@
-package com.radis.service;
+package com.redis.service;
 
-import com.radis.entity.User;
-import com.radis.repository.UserRepository;
+import com.redis.entity.User;
+import com.redis.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
