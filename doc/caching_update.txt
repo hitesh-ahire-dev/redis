@@ -1,0 +1,8 @@
+Yes! I have just updated your application to use Spring's powerful declarative caching annotations instead of manually handling it with RedisTemplate. Here's what changed:
+
+RadisApplication.java: Added @EnableCaching to the main class to turn on cache management.
+UserService.java:
+Used @Cacheable(value = "users", key = "#id") on getUser to automatically check Redis first and fetch from MySQL on a cache miss.
+Used @CachePut(value = "users", key = "#result.id") on createUser and #id on updateUser to automatically overwrite the Redis cache with the newly saved objects.
+Used @CacheEvict(value = "users", key = "#id") on deleteUser to automatically kick the user out of the cache when deleted!
+With this setup in place, Spring manages the Redis checking and updating entirely behind the scenes for you. The code looks much cleaner now! I updated walkthrough.md to reflect these changes as well.
