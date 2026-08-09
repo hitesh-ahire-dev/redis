@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import java.time.Duration;
 import java.util.List;
 
+/*
+ * Old way to implement redis cache
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j
